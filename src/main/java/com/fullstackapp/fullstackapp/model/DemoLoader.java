@@ -3,6 +3,7 @@ package com.fullstackapp.fullstackapp.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
 @Component
 public class DemoLoader implements CommandLineRunner{
 
@@ -14,7 +15,7 @@ public class DemoLoader implements CommandLineRunner{
     }
 
     @Override
-    public void run(String... strings) throws Exception{
+    public void run(String... strings) throws Exception { 
         this.contactRepository.save(new Contact("Edwar" ,"Villarreal" , "edwar@mail.com"));
     }
 
