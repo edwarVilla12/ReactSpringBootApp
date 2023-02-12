@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:3000")
 class ContactsController {
-0
-    private ContactRepository contactRepository;
 
+    private ContactRepository contactRepository;
+    
     public ContactsController(ContactRepository contactRepository){
         this.contactRepository = contactRepository;
     }
@@ -27,7 +27,7 @@ class ContactsController {
         return (Collection<Contact>)  contactRepository.findAll();    
     }
 
-    @PostMappin("/contacts")
+    @PostMapping("/contacts")
     ResponseEntity<Contact> createContact(@Valid @RequestBody Contact contact) throws URISyntaxException{
         Contact result = contactRepository.save(contact);
         return ResponseEntity.ok().body(result);
