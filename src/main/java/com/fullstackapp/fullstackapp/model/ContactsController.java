@@ -2,6 +2,7 @@ package com.fullstackapp.fullstackapp.model;
 
 import java.net.URISyntaxException;
 import java.util.Collection;
+import jakarta.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,19 +12,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:8090/api/contacts")
+@RestController
 class ContactsController {
 
     private ContactRepository contactRepository;
-    
+
     public ContactsController(ContactRepository contactRepository){
         this.contactRepository = contactRepository;
     }
 
     @GetMapping("/contacts")
-    Collection<Contact> contracts(){
+    Collection<Contact> contacts(){
         return (Collection<Contact>)  contactRepository.findAll();    
     }
 

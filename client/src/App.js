@@ -6,11 +6,11 @@ function App() {
   return (
     <div className="container-fluid">
       <nav>
-        <div className= "nav-wrapper center-align">
+        <div className="nav-wrapper center-align">
           <a href='/' className="brand-logo">Contacts</a>
         </div>
       </nav>
-      <div clasName="row">
+      <div className="row">
         <Contacts/>
       </div>      
     </div>

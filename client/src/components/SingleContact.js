@@ -1,13 +1,13 @@
 import React from 'react';
 
 const SingleContact = ({item}) => (
-    <div classNameName="row">
-    <div classNameName="col s12 m6">
-      <div classNameName="card blue-grey darken-1">
-        <div classNameName="card-content white-text">
-          <span classNameName="card-title">{item.firstName} {item.lastName}</span>           
+    <div className="row">
+    <div className="col s12 m6">
+      <div className="card blue-grey darken-1">
+        <div className="card-content white-text">
+          <span className="card-title">{item.firstName} {item.lastName}</span>           
         </div>
-        <div classNameName="card-action">
+        <div className="card-action">
           <p>{item.email}</p>
         </div>
       </div>

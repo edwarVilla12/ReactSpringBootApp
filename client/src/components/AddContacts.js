@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 
-export default class AddContact extends Component { 
+export default class AddContacts extends Component { 
 
     submitContact(event){
+
         event.preventDefault();
 
         let contact = {
             firstName : this.refs.firstName.value,
             lastName: this.refs.lastName.value,
-            email: this.refs.email.value
+            email: this.refs.email.value,
         }
 
         fetch("http://localhost:8090/api/contacts",{
@@ -24,15 +25,15 @@ export default class AddContact extends Component {
     }
     render() {
         return (
-            <div class="row">
+            <div className="row">
                 <form className="col s12" onSubmit={this.submitContact.bind(this)}>
                     <div className="row">
                         <div className="input-field col s6">  
-                            <input placeholder="Placeholder" ref="first_name" type="text" className="validate" />
+                            <input placeholder="Placeholder" ref="firstName" type="text" className="validate" />
                                 <label htmlFor="firstName">First Name</label>
                         </div>
                         <div className="input-field col s6">
-                            <input ref="last_name" type="text" className="validate" />
+                            <input ref="lastName" type="text" className="validate" />
                                 <label htmlFor="lastName">Last Name</label>
                         </div>
                     </div>                 
@@ -43,7 +44,7 @@ export default class AddContact extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        <button classNameName="waver-effect waver-light btn" type="submit" name="action">Register Developer</button>
+                        <button className="waver-effect waver-light btn" type="submit" name="action">Register Developer</button>
                     </div>
                 </form>
             </div>

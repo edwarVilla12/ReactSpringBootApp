@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SingleContact from './SingleContact';
-import AddContact from './AddContact';
+import AddContacts from './AddContacts';
 
 export default class Contacts extends Component{
     
@@ -8,24 +8,24 @@ export default class Contacts extends Component{
 
         super(props);
         this.state = {
-            contacts : [],
+            contact : [],
         };
     }
 
     componentDidMount(){
         fetch('http://localhost:8090/api/contacts')
         .then(response => response.json)
-        .then(data => this.setState({contacts : data}))
+        .then(data => this.setState({contact : data}))
     } 
     
     render() {
         return (
             <div>
                 <div className="row">
-                    <AddContact />
+                    <AddContacts />
                 </div>
                 <div className="row">
-                        {this.state.contacts.map( item => (
+                        {this.state.contact.map( item => (
                             <SingleContact key={item.id} item={item} />
                         ))}
                 </div>                        
