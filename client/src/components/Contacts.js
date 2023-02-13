@@ -8,14 +8,14 @@ export default class Contacts extends Component{
 
         super(props);
         this.state = {
-            contact : [],
+            contacts : [],
         };
     }
 
     componentDidMount(){
-        fetch('http://localhost:8090/api/contacts')
-        .then(response => response.json)
-        .then(data => this.setState({contact : data}))
+        fetch("http://localhost:8090/api/contacts")
+        .then(response => response.json())
+        .then(data => this.setState({contacts : data}))
     } 
     
     render() {
@@ -25,7 +25,7 @@ export default class Contacts extends Component{
                     <AddContacts />
                 </div>
                 <div className="row">
-                        {this.state.contact.map( item => (
+                        {this.state.contacts.map( item => (
                             <SingleContact key={item.id} item={item} />
                         ))}
                 </div>                        
